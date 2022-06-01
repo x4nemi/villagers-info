@@ -75,12 +75,12 @@ const Home: NextPage = () => {
           handleFilter={handleFilterByCategory}
         />
         <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-work-out.png"
+          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-sit-down.png"
           group={"Normal"}
           handleFilter={handleFilterByCategory}
         />
         <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-pride.png"
+          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-work-out.png"
           group={"Jock"}
           handleFilter={handleFilterByCategory}
         />
