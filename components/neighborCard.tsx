@@ -64,35 +64,6 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
       return false;
     }
   };
-  function isBirthday() {
-    setBirth(Birthday);
-    var today = new Date();
-    const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    var b = birth.split(" ");
-    // console.log(monthNames[today.getMonth()] === b[0]);
-    // console.log(birth);
-    if (
-      monthNames[today.getMonth()] === b[0] &&
-      today.getDate() === Number(b[1].slice(0, 2))
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   return (
     <React.Fragment>
@@ -102,6 +73,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
         >
           <img className="w-16 md:w-32 lg:w-full" src={Icon} />
         </span>
+
         {isTbirthday() ? (
           <div className="absolute top-0 right-0 mr-2 mt-2">
             <img
@@ -113,16 +85,32 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
             />
           </div>
         ) : null}
-        <button onClick={() => isBirthday()}>Cumpleanios</button>
         <h3 className="font-bold text-gray-700">{Name}</h3>
         <p className="italic text-gray-400 text-xs font-normal text-center">
           “{Saying}”
         </p>
+        {/* <button
+          className="text-blue-500  text-sm pt-3"
+          onClick={() => setIsOpen(true)}
+        >
+          <div className="flex justify-center align-baseline">
+            villager info
+          </div>
+        </button> */}
         <button
           className="text-blue-500  text-sm pt-3"
           onClick={() => setIsOpen(true)}
         >
-          villager info
+          <div className="static">
+            <div className="">
+              <img
+                className="w-10"
+                src={
+                  "https://izapislewska.weebly.com/uploads/4/9/8/6/49862713/passport.png"
+                }
+              />
+            </div>
+          </div>
         </button>
       </div>
       <Transition appear show={isOpen} as={React.Fragment}>
@@ -168,7 +156,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
                   {Name}
                 </Dialog.Title>
                 <div className="mt-2 justify-center">
-                  <div className="flex justify-center">
+                  <div className="flex justify-center m-10 border-10 border-[#FBF6DC]">
                     <img className="w-32 rounded-lg shadow-sm" src={Image} />
                   </div>
                   <p className="text-md text-gray-500 mb-2">
