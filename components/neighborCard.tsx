@@ -8,7 +8,11 @@ export interface NeighborCardProps {
   Birthday: string;
   Species: string;
   Gender: string;
+  Hobby: string;
+  Image: string;
   Icon: string;
+  CatchPhrase: string;
+  Saying: string;
 }
 
 const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
@@ -18,18 +22,102 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
   Birthday,
   Species,
   Gender,
+  Hobby,
+  Image,
   Icon,
+  CatchPhrase,
+  Saying,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [today, setToday] = React.useState(new Date());
+  const [birth, setBirth] = React.useState(Birthday);
+  //create an object first to indicate what values you want to output
+
+  const isTbirthday = () => {
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    var b = birth.split(" ");
+    var length = b[1].length;
+    if (length === 3) {
+      b[1] = b[1].slice(0, 1);
+    } else {
+      b[1] = b[1].slice(0, 2);
+    }
+    if (
+      monthNames[today.getMonth()] === b[0] &&
+      today.getDate() === Number(b[1].substring(0))
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  function isBirthday() {
+    setBirth(Birthday);
+    var today = new Date();
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    var b = birth.split(" ");
+    // console.log(monthNames[today.getMonth()] === b[0]);
+    // console.log(birth);
+    if (
+      monthNames[today.getMonth()] === b[0] &&
+      today.getDate() === Number(b[1].slice(0, 2))
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return (
     <React.Fragment>
-      <div className="bg-[#F7F6F3] p-2 rounded-xl shadow-md flex flex-col items-center">
+      <div className="bg-[#F7F6F3] p-2 rounded-xl shadow-md flex flex-col items-center relative">
         <span
         // role={"img"} aria-label={Icon}
         >
           <img className="w-16 md:w-32 lg:w-full" src={Icon} />
         </span>
+        {isTbirthday() ? (
+          <div className="absolute top-0 right-0 mr-2 mt-2">
+            <img
+              className="w-8"
+              src={
+                "https://dodo.ac/np/images/4/4c/Present_Delivery_NH_Inv_Icon.png"
+              }
+              title="Today is their birthday!"
+            />
+          </div>
+        ) : null}
+        <button onClick={() => isBirthday()}>Cumpleanios</button>
         <h3 className="font-bold text-gray-700">{Name}</h3>
+        <p className="italic text-gray-400 text-xs font-normal text-center">
+          “{Saying}”
+        </p>
         <button
           className="text-blue-500  text-sm pt-3"
           onClick={() => setIsOpen(true)}
@@ -72,16 +160,16 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl ">
                 <Dialog.Title
                   as="h3"
                   className="text-lg text-center font-medium leading-6 text-gray-900"
                 >
-                  {Name.toUpperCase()}
+                  {Name}
                 </Dialog.Title>
-                <div className="mt-2">
+                <div className="mt-2 justify-center">
                   <div className="flex justify-center">
-                    <img className="w-16 md:w-32 lg:w-full" src={Icon} />
+                    <img className="w-32 rounded-lg shadow-sm" src={Image} />
                   </div>
                   <p className="text-md text-gray-500 mb-2">
                     {" "}
