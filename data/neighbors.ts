@@ -8,7 +8,7 @@ const neighborsData = [
     Gender: "Male",
     Hobby: "Education",
     Image: "https://acnhapi.com/v1/images/villagers/1",
-    Icon: "https://acnhapi.com/v1/icons/villagers/1",
+    Icon: "https://raw.githubusercontent.com/alexislours/ACNHAPI/master/icons/villagers/ant00.png",
     CatchPhrase: "ah-CHOO",
     Saying: "Don't punch your nose to spite your face.",
   },
