@@ -112,7 +112,7 @@ const neighborsData = [
     Gender: "Female",
     Hobby: "Fashion",
     Image: "https://acnhapi.com/v1/images/villagers/9",
-    Icon: "https://raw.githubusercontent.com/alexislours/ACNHAPI/master/icons/villagers/bea01.png,
+    Icon: "https://raw.githubusercontent.com/alexislours/ACNHAPI/master/icons/villagers/bea01.png",
     CatchPhrase: "wah",
     Saying: "Time spent with friends is time well spent.",
   },
