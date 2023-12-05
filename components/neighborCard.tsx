@@ -108,7 +108,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 							leaveFrom="opacity-100 scale-100"
 							leaveTo="opacity-0 scale-95"
 						>
-							<div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-2xl rounded-2xl ">
+							<div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-teal-50 shadow-2xl rounded-2xl ">
 								<Dialog.Title
 									as="h3"
 									className="text-xl text-center font-medium leading-6 text-gray-900 justify-between flex items-center"
@@ -116,7 +116,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 									{Name}
 									<button
 										type="button"
-										className="inline-flex justify-center px-4 py-2 text-sm font-medium text-red-600 bg-red-100 border border-transparent rounded-md hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+										className="inline-flex justify-center px-4 py-2 text-sm font-medium text-teal-600 bg-teal-100 border border-transparent rounded-md hover:bg-teal-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
 										onClick={() => setIsOpen(false)}
 									>
 										X
@@ -124,7 +124,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 								</Dialog.Title>
 								<div className="mt-2 justify-center">
 									<div className="flex justify-center m-10 border-10 border-[#FBF6DC]">
-										<img className="w-32 rounded-lg shadow-sm" src={Image} />
+										<img className="w-32 rounded-lg shadow-sm" src={Icon} />
 									</div>
 									<p className="text-md text-gray-500 mb-2">
 										{" "}
@@ -143,15 +143,6 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 										{" "}
 										<span className="font-bold">Birthday:</span> {Birthday}{" "}
 									</p>
-								</div>
-								<div className="flex justify-center mt-4">
-									<button
-										type="button"
-										className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-										onClick={() => setIsOpen(false)}
-									>
-										Got it, thanks!
-									</button>
 								</div>
 							</div>
 						</Transition.Child>
