@@ -26,7 +26,6 @@ const Home: NextPage = () => {
     }
   }
 
-  console.log(realNeighbors)
 
   function handleFilterByCategory(search: string) {
     setFilteredNeighbors(
