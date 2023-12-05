@@ -6,27 +6,31 @@ import NeighborCard from "../components/neighborCard";
 import neighborsData from "../data/neighbors";
 import CategoryCard from "../components/categoryCard";
 
+import { realNeighbors } from "../utils/utils";
+
 const Home: NextPage = () => {
   const [filteredNeighbors, setFilteredNeighbors] =
-    React.useState(neighborsData);
+    React.useState(realNeighbors);
 
   function handleFilterBySearch(search: string) {
     if (search.length > 0) {
       setFilteredNeighbors(
-        neighborsData
+        realNeighbors
           .filter((neighbor) => {
             return neighbor.Name.toLowerCase().includes(search.toLowerCase());
           })
           .slice(0, 100)
       );
     } else {
-      setFilteredNeighbors(neighborsData.slice(0, 100));
+      setFilteredNeighbors(realNeighbors.slice(0, 100));
     }
   }
 
+  console.log(realNeighbors)
+
   function handleFilterByCategory(search: string) {
     setFilteredNeighbors(
-      neighborsData.filter((neighbor) => {
+      realNeighbors.filter((neighbor) => {
         return neighbor.Personality.toLowerCase().includes(
           search.toLowerCase()
         );
