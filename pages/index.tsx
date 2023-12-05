@@ -12,7 +12,11 @@ const Home: NextPage = () => {
   const [filteredNeighbors, setFilteredNeighbors] =
     React.useState(realNeighbors);
 
+  const [selectedCategory, setSelectedCategory] = React.useState('All')
+
   function handleFilterBySearch(search: string) {
+    console.log(search);
+    
     if (search.length > 0) {
       setFilteredNeighbors(
         realNeighbors
@@ -25,13 +29,24 @@ const Home: NextPage = () => {
       setFilteredNeighbors(realNeighbors.slice(0, 100));
     }
   }
-
+  
+  const categories : Record<string, string> = {
+    "Snooty": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-pride.png", 
+    "Cranky": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-resignation.png",
+    "Peppy": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-flourish.png",
+    "Smug": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-mischief.png",
+    "Lazy": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-sleepy.png",
+    "Normal": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-sit-down.png",
+    "Jock": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-work-out.png",
+    "All": "https://dodo.ac/np/images/5/59/Emotion_Love_NH_Icon.png"
+  }
 
   function handleFilterByCategory(search: string) {
+    setSelectedCategory(search);
     setFilteredNeighbors(
       realNeighbors.filter((neighbor) => {
         return neighbor.Personality.toLowerCase().includes(
-          search.toLowerCase()
+          search === 'All' ? '' : search.toLowerCase()
         );
       })
     );
@@ -52,7 +67,20 @@ const Home: NextPage = () => {
         />
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
-        <CategoryCard
+        {
+          Object.keys(categories).map((category) => {
+            return (
+              <CategoryCard
+                selected={selectedCategory === category}
+                Icon={categories[category]}
+                group={category}
+                handleFilter={handleFilterByCategory}
+                key={category}
+              />
+            )
+          })
+        }
+        {/* <CategoryCard
           Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-pride.png"
           group={"Snooty"}
           handleFilter={handleFilterByCategory}
@@ -87,6 +115,12 @@ const Home: NextPage = () => {
           group={"Jock"}
           handleFilter={handleFilterByCategory}
         />
+        <CategoryCard
+          Icon="https://dodo.ac/np/images/5/59/Emotion_Love_NH_Icon.png"
+          group={"All"}
+          handleFilter={handleFilterByCategory}
+          selected={true}
+        /> */}
       </div>
       <List neighbors={filteredNeighbors} />
     </Layout>
