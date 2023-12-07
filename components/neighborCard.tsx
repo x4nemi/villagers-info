@@ -124,7 +124,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 								</Dialog.Title>
 								<div className="mt-2 justify-center">
 									<div className="flex justify-center m-10 border-10 border-[#FBF6DC]">
-										<img className="w-32 rounded-lg shadow-sm" src={Icon} />
+										<img className="w-32 rounded-lg shadow-sm" src={Image} />
 									</div>
 									<p className="text-md text-gray-500 mb-2">
 										{" "}

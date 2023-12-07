@@ -3,7 +3,9 @@ import { NeighborCardProps } from "../components/neighborCard"
 
 export const getNeighbours = ( array: Array<NeighborCardProps>  ) => {
     const neighbors = neighborsData.map(neighbor => {
-        return {...neighbor, Icon: `/icons/${neighbor.Name.toLocaleLowerCase().split(' ').join('-').replaceAll('.', '')}.png`};
+        // console.log(`/icons/${neighbor.Name.toLocaleLowerCase().split(' ').join('-').replaceAll('.', '')}.png`);
+        const path = `${neighbor.Name.toLocaleLowerCase().split(' ').join('-').replaceAll('.', '')}.png`;
+        return {...neighbor, Icon: '/icons/' + path, Image: '/images/' + path};
     });
     return neighbors;
 }
