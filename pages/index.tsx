@@ -80,47 +80,6 @@ const Home: NextPage = () => {
             )
           })
         }
-        {/* <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-pride.png"
-          group={"Snooty"}
-          handleFilter={handleFilterByCategory}
-        />
-        <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-resignation.png"
-          group={"Cranky"}
-          handleFilter={handleFilterByCategory}
-        />
-        <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-flourish.png"
-          group={"Peppy"}
-          handleFilter={handleFilterByCategory}
-        />
-        <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-mischief.png"
-          group={"Smug"}
-          handleFilter={handleFilterByCategory}
-        />
-        <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-sleepy.png"
-          group={"Lazy"}
-          handleFilter={handleFilterByCategory}
-        />
-        <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-sit-down.png"
-          group={"Normal"}
-          handleFilter={handleFilterByCategory}
-        />
-        <CategoryCard
-          Icon="https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-work-out.png"
-          group={"Jock"}
-          handleFilter={handleFilterByCategory}
-        />
-        <CategoryCard
-          Icon="https://dodo.ac/np/images/5/59/Emotion_Love_NH_Icon.png"
-          group={"All"}
-          handleFilter={handleFilterByCategory}
-          selected={true}
-        /> */}
       </div>
       <List neighbors={filteredNeighbors} />
     </Layout>

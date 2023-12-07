@@ -53,10 +53,11 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 				<div style={{
 					backgroundColor: color,
 					color: TextColor
-				}} className="absolute inline-flex items-center w-20 justify-center h-6 text-xs font-bold text-white shadow-lg transition-all ease-in delay-100 rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">{Name}</div>
+				}} className="absolute inline-flex items-center w-20 justify-center h-6  shadow-lg rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">
+					<span className="text-xs font-bold">{ Name }</span>
+					</div> 
 
-				<div className="relative bg-[#0CC8B9] h-32 w-32 rounded-full border-8 border-[#f7f6f3] ">
-					{/* <div className="relative bg-[#0CC8B9] border-8 rounded-full w-16 md:w-32 lg:w-32"></div> */}
+				 <div className="relative bg-[#0CC8B9] h-32 w-32 rounded-full border-8 border-[#f7f6f3] ">
 					<img className="absolute w-16 md:w-32 lg:w-32 h-32 bg-contain" src={Icon} />
 				</div>
 
@@ -76,23 +77,8 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 						{Saying}
 					</p>
 				</div>
-				{/* <button
-					className="text-blue-500  text-sm pt-3"
-					onClick={() => setIsOpen(true)}
-				>
-					<div className="static">
-						<div className="">
-							<img
-								className="w-10"
-								src={
-									"https://izapislewska.weebly.com/uploads/4/9/8/6/49862713/passport.png"
-								}
-							/>
-						</div>
-					</div>
-				</button> */}
 			</div>
-			<Transition appear show={isOpen} as={React.Fragment}>
+			{/* <Transition appear show={isOpen} as={React.Fragment}>
 				<Dialog
 					as="div"
 					className="fixed inset-0 z-10 overflow-y-auto"
@@ -167,7 +153,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 						</Transition.Child>
 					</div>
 				</Dialog>
-			</Transition>
+			</Transition> */}
 		</React.Fragment>
 	);
 };
