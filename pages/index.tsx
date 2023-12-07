@@ -31,6 +31,7 @@ const Home: NextPage = () => {
   }
   
   const categories : Record<string, string> = {
+    "All": "https://dodo.ac/np/images/5/59/Emotion_Love_NH_Icon.png",
     "Snooty": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-pride.png", 
     "Cranky": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-resignation.png",
     "Peppy": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-flourish.png",
@@ -38,7 +39,6 @@ const Home: NextPage = () => {
     "Lazy": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-sleepy.png",
     "Normal": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-sit-down.png",
     "Jock": "https://animalcrossingworld.com/wp-content/uploads/2020/06/animal-crossing-new-horizons-guide-reaction-icon-work-out.png",
-    "All": "https://dodo.ac/np/images/5/59/Emotion_Love_NH_Icon.png"
   }
 
   function handleFilterByCategory(search: string) {
