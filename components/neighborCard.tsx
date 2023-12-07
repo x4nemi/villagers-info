@@ -14,6 +14,8 @@ export interface NeighborCardProps {
 	Icon: string;
 	CatchPhrase: string;
 	Saying: string;
+	Color?: string;
+	TextColor?: string;
 }
 
 const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
@@ -28,19 +30,35 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 	Icon,
 	CatchPhrase,
 	Saying,
+	Color,
+	TextColor,
 }) => {
 	const [isOpen, setIsOpen] = React.useState(false);
 	const [isTbirthday, setIsTbirthday] = React.useState(false);
+	const [color, setColor] = React.useState(Color);
 
 	React.useEffect(() => {
 		setIsTbirthday(isBirthday(Birthday));
 	}, [Birthday]);
+
+	React.useEffect(() => {
+		setColor(Color);
+	}
+		, [Color]);
+	// console.log(Color);
+
 	return (
 		<React.Fragment>
-			<div className="bg-[#F7F6F3] p-2 rounded-xl shadow-md flex flex-col items-center relative">
-				<span>
-					<img className="w-16 md:w-32 lg:w-full" src={Icon} />
-				</span>
+			<div className="bg-[#f7f6f3] p-2 rounded-xl flex flex-col items-center relative hover:shadow-lg transition-all ease-in delay-100">
+				<div style={{
+					backgroundColor: color,
+					color: TextColor
+				}} className="absolute inline-flex items-center w-20 justify-center h-6 text-xs font-bold text-white shadow-lg transition-all ease-in delay-100 rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">{Name}</div>
+
+				<div className="relative bg-[#0CC8B9] h-32 w-32 rounded-full border-8 border-[#f7f6f3] ">
+					{/* <div className="relative bg-[#0CC8B9] border-8 rounded-full w-16 md:w-32 lg:w-32"></div> */}
+					<img className="absolute w-16 md:w-32 lg:w-32 h-32 bg-contain" src={Icon} />
+				</div>
 
 				{isTbirthday ? (
 					<div className="absolute top-0 right-0 mr-2 mt-2">
@@ -53,11 +71,12 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 						/>
 					</div>
 				) : null}
-				<h3 className="font-bold text-gray-700">{Name}</h3>
-				<p className="italic text-gray-400 text-xs font-normal text-center">
-					“{Saying}”
-				</p>
-				<button
+				<div className="flex items-center ">
+					<p className="italic text-gray-400 text-xs font-normal my-3 px-3 text-center">
+						{Saying}
+					</p>
+				</div>
+				{/* <button
 					className="text-blue-500  text-sm pt-3"
 					onClick={() => setIsOpen(true)}
 				>
@@ -71,7 +90,7 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 							/>
 						</div>
 					</div>
-				</button>
+				</button> */}
 			</div>
 			<Transition appear show={isOpen} as={React.Fragment}>
 				<Dialog
