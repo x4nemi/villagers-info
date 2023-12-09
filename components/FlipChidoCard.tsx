@@ -42,7 +42,7 @@ const FlipChidoCard: React.FunctionComponent<NeighborCardProps> = ({
                     <div style={{
                         backgroundColor: color,
                         color: TextColor
-                    }} className="z-50 absolute inline-flex items-center w-24 justify-center h-8  shadow-lg rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">
+                    }} className="z-50 absolute inline-flex items-center w-28 justify-center h-8  shadow-lg rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">
                         <span className="text-base font-bold">{Name}</span>
                     </div>
                     <div className="relative bg-[#E6E6CC] h-36 w-36 rounded-full border-8 border-[#FAFAD8] ">
