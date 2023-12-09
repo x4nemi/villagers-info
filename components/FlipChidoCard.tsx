@@ -46,10 +46,10 @@ const FlipChidoCard: React.FunctionComponent<NeighborCardProps> = ({
                         <span className="text-base font-bold">{Name}</span>
                     </div>
                     <div className="relative bg-[#E6E6CC] h-36 w-36 rounded-full border-8 border-[#FAFAD8] ">
-                        <img className="absolute w-full h-full " src={Icon} />
+                        <img className="absolute w-full h-full " src={Icon} loading='lazy' />
                     </div>
                     <div className="flex items-center ">
-                        <p className="italic text-[#666848] text-sm font-normal my-3 px-7 text-center">
+                        <p className="italic text-[#666848] text-sm font-light my-3 px-7 text-center">
                             {Saying}
                         </p>
                     </div>
@@ -61,7 +61,9 @@ const FlipChidoCard: React.FunctionComponent<NeighborCardProps> = ({
                     </div>
                     <div className='flex p-2 w-full items-center bg-[#E6EFDD] mt-3'>
                         <div className="relative h-32 w-32 flex mr-3">
-                            <img className="absolute h-full rounded-3xl border-8 border-[#FCFBE4]" src={Image} />
+                            <img className="absolute h-full rounded-3xl border-8 border-[#FCFBE4]" src={Image}
+                            loading='lazy'
+                            />
                         </div>
                         <div className="flex-col ">
                             <span className="justify-self-center bg-[#FCFAE4] text-[#9F9781] text-base font-medium me-2 px-2.5 py-0.5 rounded">{Name}</span>
