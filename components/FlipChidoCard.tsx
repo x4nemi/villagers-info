@@ -42,11 +42,8 @@ const FlipChidoCard: React.FunctionComponent<NeighborCardProps> = ({
                     <div style={{
                         backgroundColor: color,
                         color: TextColor
-                    }} className="absolute inline-flex items-center w-24 justify-center h-8  shadow-lg rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">
+                    }} className="z-50 absolute inline-flex items-center w-24 justify-center h-8  shadow-lg rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">
                         <span className="text-base font-bold">{Name}</span>
-                    </div>
-                    <div className="absolute top-0 right-0 mr-2 mt-2">
-                        {/* <span className="justify-self-center bg-[#47985B]/75 text-[#47985B] text-sm font-medium me-2 px-2.5 py-0.5 rounded">{Species}</span> */}
                     </div>
                     <div className="relative bg-[#E6E6CC] h-36 w-36 rounded-full border-8 border-[#FAFAD8] ">
                         <img className="absolute w-full h-full " src={Icon} />

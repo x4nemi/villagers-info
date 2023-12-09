@@ -9,7 +9,7 @@ export interface NeighborListProps {
 const List: React.FunctionComponent<NeighborListProps> = ({ neighbors }) => {
   return (
     <React.Fragment>
-      <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
         {neighbors.map((neighbor, index) => {
           return <FlipChidoCard key={index} {...neighbor} />;
           // <NeighborCard key={index} {...neighbor} />;
