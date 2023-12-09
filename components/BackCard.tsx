@@ -18,7 +18,7 @@ export interface NeighborCardProps {
 	TextColor?: string;
 }
 
-const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
+const BackCard: React.FunctionComponent<NeighborCardProps> = ({
 	ID,
 	Name,
 	Personality,
@@ -51,12 +51,12 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 				<div style={{
 					backgroundColor: color,
 					color: TextColor
-				}} className="absolute inline-flex items-center w-20 justify-center h-6  shadow-lg rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">
+				}} className="absolute inline-flex items-center w-20 justify-center h-6  shadow-lg rounded-3xl  -top-2 -right-2 rotate-6">
 					<span className="text-xs font-bold">{Name}</span>
 				</div>
 
 				<div className="relative bg-[#0CC8B9] h-32 w-32 rounded-full border-8 border-[#f7f6f3] ">
-					<img className="absolute w-32 md:w-32 lg:w-32 h-32 " src={Icon} />
+					<img className="absolute w-32 md:w-32 lg:w-32 h-32 rounded-xl" src={Image} />
 				</div>
 
 				{isTbirthday ? (
@@ -80,4 +80,4 @@ const NeighborCard: React.FunctionComponent<NeighborCardProps> = ({
 	);
 };
 
-export default NeighborCard;
+export default BackCard;

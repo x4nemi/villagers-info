@@ -1,20 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: 'Rodin';
-  src: url('../public/Rodinn.otf');
-  font-weight: lighter;
-}
-
 .flip-card {
-    /* min-width: none; */
-    min-height: 200px;
-}
+    width: 200px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+  }
   
   .flip-card-inner {
-    display: flex;
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
@@ -35,11 +24,12 @@
   
   .flip-card-front {
     /* Front card styling */
-    /* background-color: #ccc;  */
-    /* Adjust the background color as needed */
+    /* background-color: #ccc; */
+     /* Adjust the background color as needed */
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
   
   .flip-card-back {
@@ -50,6 +40,6 @@
     align-items: center;
     justify-content: center;
     transform: rotateY(180deg);
-    color: black; /* Adjust the text color as needed */
+    color: white; /* Adjust the text color as needed */
   }
   
