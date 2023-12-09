@@ -45,11 +45,11 @@ const FlipChidoCard: React.FunctionComponent<NeighborCardProps> = ({
                     }} className="absolute inline-flex items-center w-28 justify-center h-8  shadow-lg rounded-3xl -inset-0 -top-2 -left-2 -rotate-6">
                         <span className="text-base font-bold">{Name}</span>
                     </div>
-                    <div className="relative bg-[#E6E6CC] h-36 w-36 rounded-full border-8 border-[#FAFAD8] ">
+                    <div className="relative bg-[#E6E6CC] h-36 w-36 rounded-full border-8 border-[#FAFAD8]">
                         <img className="absolute w-full h-full " src={Icon} loading='lazy' />
                     </div>
                     <div className="flex items-center ">
-                        <p className="italic text-[#666848] text-sm font-light my-3 px-7 text-center">
+                        <p className="italic text-[#666848] text-sm font-light mb-1 px-7 text-center">
                             {Saying}
                         </p>
                     </div>
