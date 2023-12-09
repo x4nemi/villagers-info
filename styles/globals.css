@@ -6,6 +6,7 @@
   font-family: 'Rodin';
   src: url('../public/Rodinn.otf');
   font-weight: lighter;
+  font-display: swap;
 }
 
 .flip-card {
