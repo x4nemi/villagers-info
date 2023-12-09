@@ -17,9 +17,7 @@ export const getNeighbours = ( array: Array<NeighborCardProps>  ) => {
 
 
 
-export const realNeighbors = getNeighbours(neighborsData)
-// // shuffle(
-    // )
+export const realNeighbors = getNeighbours(neighborsData).sort((a, b) => a.Name.localeCompare(b.Name));
 
 export const isBirthday = (birthday: string) => {
     const today = new Date();
