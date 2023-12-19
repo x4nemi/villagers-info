@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div className="bg-[#B3E1B3] min-h-screen">
-      <div className="max-w-6xl mx-auto p-5 ">{children}</div>
+      <div className="max-w-6xl mx-auto p-5 xl:max-w-full xl:px-44">{children}</div>
     </div>
   )
 };
